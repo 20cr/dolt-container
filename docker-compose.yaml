@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  dolt:
+    container_name: dolt
+    build:
+      context: .
+      args:
+        TAG: "v0.40.4"
