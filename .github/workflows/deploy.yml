@@ -23,6 +23,8 @@ jobs:
           password: ${{ secrets.REGISTRY_TOKEN }}
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
+        env:
+          TAG: ${{ steps.vars.outputs.tag }}
         with:
           push: true # Will only build if this is not here
           tags: |
