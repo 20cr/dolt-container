@@ -13,6 +13,8 @@ env:
 jobs:
   Deploy:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Get the version
         id: vars
