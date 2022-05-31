@@ -2,9 +2,10 @@ FROM golang:1.18-alpine as builder
 
 RUN apk --update --no-cache add make git g++ linux-headers
 
-ARG TAG
+ARG TAG=v0.40.4
 
-RUN git clone --branch ${TAG} --single-branch https://github.com/dolthub/dolt.git /go/src/github.com/dolthub/dolt
+#RUN git clone --branch ${TAG} --single-branch https://github.com/dolthub/dolt.git /go/src/github.com/dolthub/dolt
+RUN git clone --branch v0.40.4 --single-branch https://github.com/dolthub/dolt.git /go/src/github.com/dolthub/dolt
 
 WORKDIR /go/src/github.com/dolthub/dolt/go
 RUN go build ./cmd/dolt
